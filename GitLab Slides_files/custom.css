@@ -1,0 +1,23 @@
+.img-top-right {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+.custom-highlight {
+    color: #000;
+    background-color: white;
+    font-style: normal;
+    border-radius: 10px;
+    padding: 25px;
+    font-family: menlo, monospace;
+}
+
+.blacktext-slide {
+    color: #000;
+}
+
+.blacktext-slide h1, .blacktext-slide h2, .blacktext-slide h3, .blacktext-slide h4, .blacktext-slide h5, .blacktext-slide h6 {
+    color: #000 !important;
+}

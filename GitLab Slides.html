@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)http://gitlab-training.gitlab.io/basics/deck/both.html#/39 -->
+<html lang="en" class=" js no-mobile desktop no-ie chrome chrome69 basics-section deck-section gradient rgba opacity textshadow multiplebgs boxshadow borderimage borderradius cssreflections csstransforms csstransitions no-touch no-retina fontface domloaded w-1135 gt-240 gt-320 gt-480 gt-640 gt-768 gt-800 gt-1024 lt-1280 lt-1440 lt-1680 lt-1920 no-portrait landscape" id="both-page"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+
+		<title>GitLab Slides</title>
+
+		<link rel="stylesheet" href="./GitLab Slides_files/reveal.css">
+		<link rel="stylesheet" href="./GitLab Slides_files/darcula.css">
+		<link rel="stylesheet" href="./GitLab Slides_files/custom.css">
+		<link rel="stylesheet" href="./GitLab Slides_files/gitlab.css" id="theme">
+		<link rel="stylesheet" href="./GitLab Slides_files/fontawesome-all.min.css"><script type="text/javascript" src="./GitLab Slides_files/marked.js.download"></script><script type="text/javascript" src="./GitLab Slides_files/markdown.js.download"></script><script type="text/javascript" src="./GitLab Slides_files/notes.js.download"></script><script type="text/javascript" src="./GitLab Slides_files/highlight.js.download"></script><script type="text/javascript" src="./GitLab Slides_files/zoom.js.download"></script>
+	</head>
+
+	<body style="transition: -webkit-transform 0.8s ease 0s;">
+
+		<div class="reveal fade center has-horizontal-slides ready" role="application" data-transition-speed="default" data-background-transition="fade">
+
+			<div class="slides" style="width: 960px; height: 700px; left: 50%; top: 50%; bottom: auto; right: auto; transform: translate(-50%, -50%) scale(0.877714);">
+
+                <!-- Use external markdown resource, separate slides by three newlines; vertical slides by two newlines -->
+                <section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 53.5px; display: none;" hidden="" aria-hidden="true"><h2 id="gitlab">GitLab</h2>
+<p>Everyone Can Contribute</p>
+<p><img height="300" class="plain" src="./GitLab Slides_files/logo-square.png" data-lazy-loaded=""></p>
+<aside class="notes"><p>Here's my speaker note</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 143px; display: none;" hidden="" aria-hidden="true"><p><img height="200" class="plain" src="./GitLab Slides_files/logo-square.png" data-lazy-loaded=""></p>
+<h3>
+    Learning GitLab with Git Basics
+</h3>
+
+<aside class="notes"><p>Repo for the examples: git@gitlab.com:gitlab-org/training-examples.git
+For import:   <a href="https://gitlab.com/gitlab-org/training-examples.git">https://gitlab.com/gitlab-org/training-examples.git</a></p>
+<p>Now would be a good time to ask about the experience of the class wrt GitLab and Git</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 143px; display: none;" hidden="" aria-hidden="true"><p><img height="200" class="plain" src="./GitLab Slides_files/logo-square.png" data-lazy-loaded=""></p>
+<h3>
+    Part 1 - Learning GitLab
+</h3>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 11px; display: none;" hidden="" aria-hidden="true"><h2 id="agenda">Agenda</h2>
+<ul>
+<li>Workshop setup</li>
+<li class="fragment visible" data-fragment-index="0">What are Git &amp; GitLab? <!-- --></li>
+<li class="fragment visible" data-fragment-index="1">GitLab UI walkthrough <!-- --><ul>
+<li>Projects</li>
+<li>Issues</li>
+<li>Merge Requests</li>
+<li>Pipelines</li>
+<li>Settings</li>
+<li>User &amp; Admin Area</li>
+<li>Typical GitLab Workflow &amp; Workshop</li>
+</ul>
+</li>
+</ul>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" datacenter="false" class="past" style="top: 95.5px; display: none;" hidden="" aria-hidden="true"><!-- -->
+<h2 id="hands-on-with-gitlab">Hands on with GitLab</h2>
+<p>Training Server:</p>
+<p><a href="https://demo.tanuki.cloud/">https://demo.tanuki.cloud</a></p>
+<p>Logins:</p>
+<pre><code class="markdown hljs">
+<span class="hljs-bullet">- </span>Name(s):   <span class="hljs-code">`user2`</span> .. <span class="hljs-code">`user50`</span>
+<span class="hljs-bullet">- </span>Password:  <span class="hljs-code">`G1tlab23`</span>
+
+</code></pre>
+
+<aside class="notes"><p>Allow folks to login early to follow along the next 10+ slides
+25 user accounts user1 .. user25
+1-20 have passwords of “G1tlab23”
+Make sure everyone has a username + password and can login.
+May take 5-10 to setup and organize.</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 6.5px; display: none;" hidden="" aria-hidden="true"><h2 id="what-is-git-">What is Git?</h2>
+<p>Git is a Version Control System</p>
+<ul>
+<li>Open Source</li>
+<li>Distributed (vs Centralized)</li>
+<li>Records changes, maintains history of files</li>
+<li>Great branching model that adapts to most workflows</li>
+<li>Fast &amp; reliable</li>
+<li>Command line, native and web-based apps</li>
+</ul>
+<p><a href="https://git-scm.com/">https://git-scm.com</a></p>
+<p><img src="./GitLab Slides_files/git-icon.png" class="plain img-top-right" width="150"></p>
+<aside class="notes"><p>Distributed does not require a constant connection to a central server
+Centralized does (SVN, P4, VSS)
+Great branching
+EXTREMELY lightweight
+Branches are sparse; back end stores only files that are changed on 
+the branch vs. containing EVERY file</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 0px; display: none;" hidden="" aria-hidden="true"><h2 id="what-is-gitlab-">What is GitLab?</h2>
+<ul>
+<li>Began as a web based public Git repository<ul>
+<li>Incorporated in 2014 (but coding began in 2011)</li>
+</ul>
+</li>
+<li>Open Source with Community &amp; Enterprise editions</li>
+<li>Now encompasses the entire SDLC aka “Idea to Production”<ul>
+<li>Issues &amp; Issue Boards, Code Review</li>
+<li>Continuous Integration  (automated build &amp; test)</li>
+<li>Continuous Delivery &amp; Deployment</li>
+<li>Container registry, and more!</li>
+</ul>
+</li>
+</ul>
+<!-- TODO: add fun/cut tanuki logo -->
+<p><span class="gitlab-yellow-text">Monthly releases 22<sup>nd</sup> day of every month!</span></p>
+<aside class="notes"><p>We refer to the SDLC process in GitLab as “Idea to Production”</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 42.5px; display: none;" hidden="" aria-hidden="true"><h3 id="single-application-for-all-of-devops">Single application for all of DevOps</h3>
+<p><img class="plain" src="./GitLab Slides_files/sdlc-icons-gray-small.png" data-lazy-loaded=""></p>
+<table>
+    <thead>
+    <tr>
+        <th style="color: #6b4fbb;">PLAN</th>
+        <th style="color: #6b4fbb;">CODE</th>
+        <th style="color: #6b4fbb;">TEST</th>
+        <th style="color: #e24329;">DEPLOY</th>
+        <th style="color: #e24329;">ANALYZE</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> 
+            <small>
+            Issues <br>
+            Weights <br>
+            Boards <br>
+            Time Tracking <br>
+            </small>
+            </td>
+            <td>
+            <small>
+            Repository Management <br>
+            Merge Requests <br>
+            Code Review  <br>
+            Diff Tools <br>
+            </small>
+            </td>
+            <td>
+            <small>
+            GitLab CI  <br>
+            Autoscale Runners <br>
+            Review Apps <br>
+            Web Terminal <br>
+            </small>
+            </td>
+            <td>
+            <small>
+            CI/CD Pipelines <br>
+            Auto or Manual Deploy <br>
+            Container Registry <br>
+            ChatOps <br>
+            </small>
+            </td>
+            <td>
+            <small>
+            Contributor Analytics
+            Release Cycle Analytics
+            Prometheus Monitoring
+            </small>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<aside class="notes"><p>You can see from this slide that we are so much more than version control and source code management. </p>
+<p>We offer a unified experience for chat, issue tracking, code review, CI/CD, release cycle analytics, and performance monitoring.</p>
+<p>Social coding, continuous integration, and release automation have proven to improve development speed and software quality. GitLab connects every step of the software development lifecycle to help your team simplify processes and bring products to market faster. </p>
+<p>There are significant benefits to having one tightly integrated product for your development process. </p>
+<p>One is end to end collaboration and visibility. Whether you want your Ops teams to be able to trace code back to developers or you want developers to be able to monitor the deployment of their code. With GitLab, everyone has one place to work together. 
+Version everything: Versioning everything from your code to test scripts has become an industry best practice. In GitLab, the product versions everything from issues to code to the tests your team writes.
+Automate more of your workflow: Automation is also another industry best practice. GitLab helps eliminate manual processes and accelerate delivery with test and release automation. 
+Metrics: Lean thinking says that you can’t improve something that you’re not measuring. We see that very few of our customers were measuring cycle time. Not because they didn’t want to but because finding a way to measure this would’ve required them to build their own tooling that would track how their code is moving through a number of different products. Since GitLab has one datastore, we can offer complete analytics on your development process.</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 0px; display: none;" hidden="" aria-hidden="true"><h2 id="gitlab-documentation">GitLab Documentation</h2>
+<p><img src="./GitLab Slides_files/docs.png" height="400"></p>
+<p>docs.gitlab.com</p>
+<aside class="notes"><p>Help people, help themselves!  Let folks know that before we dive into the product, everything they see (and even areas we don’t cover!) is exceptionally well documented at docs.gitlab.com.    They can go there for more information at anytime.   </p>
+<p>Can also mention that google is our friend for searching “gitlab XXXX” :)</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 13px; display: none;" hidden="" aria-hidden="true"><h3 id="gitlab-resources">GitLab Resources</h3>
+<p><img src="./GitLab Slides_files/resources.png" height="400"></p>
+<p>about.gitlab.com/resources</p>
+<aside class="notes"><p>Mention all the self-service training modules on git, gitlab, gitlab workflow INCLUDING advanced topics like installation, permissions, integrations, migrations, etc</p>
+</aside></section><section data-background-image="img/icon-pattern-background-purple.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 54.5px; display: none;" hidden="" aria-hidden="true"><!-- -->
+<p><img class="plain" height="400" src="./GitLab Slides_files/stacked_wm_no_bg.png" data-lazy-loaded=""></p>
+<p>What we'll see in the application</p>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 0px; display: none;" hidden="" aria-hidden="true"><h2 style="color: #db3b21;">
+    Plan
+</h2>
+
+<h4 id="get-your-best-ideas-into-development">Get your best ideas into development</h4>
+<p><img src="./GitLab Slides_files/plan-screenshot.jpg" data-lazy-loaded=""></p>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 0px; display: none;" hidden="" aria-hidden="true"><h2 style="color: #db3b21;">
+    Create
+</h2>
+
+<h4 id="securely-write-and-manage-code-and-project-data">Securely write and manage code and project data</h4>
+<p><img src="./GitLab Slides_files/create-screenshotb.jpg" data-lazy-loaded=""></p>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 0px; display: none;" hidden="" aria-hidden="true"><h2 style="color: #db3b21;">
+    Verify
+</h2>
+
+<h4 id="ship-better-software-faster">Ship better software, faster</h4>
+<p><img src="./GitLab Slides_files/verify-screenshot.jpg" data-lazy-loaded=""></p>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 0px; display: none;" hidden="" aria-hidden="true"><h2 style="color: #db3b21;">
+    Package
+</h2>
+
+<h4 id="manage-custom-container-images-with-ease">Manage custom container images with ease</h4>
+<p><img src="./GitLab Slides_files/package-screenshot.jpg" data-lazy-loaded=""></p>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 0px; display: none;" hidden="" aria-hidden="true"><h2 style="color: #db3b21;">
+    Release
+</h2>
+
+<h4 id="minimize-complexity-with-built-in-continuous-delivery">Minimize complexity with built-in Continuous Delivery</h4>
+<p><img src="./GitLab Slides_files/release-screenshot.jpg" data-lazy-loaded=""></p>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 0px; display: none;" hidden="" aria-hidden="true"><h2 style="color: #db3b21;">
+    Configure
+</h2>
+
+<h4 id="automate-configuration-management">Automate configuration management</h4>
+<p><img src="./GitLab Slides_files/configure-screenshot.jpg" data-lazy-loaded=""></p>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 0px; display: none;" hidden="" aria-hidden="true"><h2 style="color: #db3b21;">
+    Monitor
+</h2>
+
+<h4 id="analyze-velocity-monitor-application-performance">Analyze velocity &amp; monitor application performance</h4>
+<p><img src="./GitLab Slides_files/measure-screenshot.jpg" data-lazy-loaded=""></p>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 140px; display: none;" hidden="" aria-hidden="true"><h2 id="gitlab-gui-overview">GitLab GUI Overview</h2>
+<ul>
+<li>User area</li>
+<li>Settings</li>
+<li>Dashboard</li>
+<li>Groups</li>
+<li>Projects</li>
+</ul>
+<aside class="notes"><ul>
+<li>Wrech for admin users</li>
+<li>Create a new item from <code>+</code> dropdown</li>
+<li>Issues</li>
+<li>Merge Requests</li>
+<li>ToDos</li>
+</ul>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 133px; display: none;" hidden="" aria-hidden="true"><h2 id="anatomy-of-a-project">Anatomy of a Project</h2>
+<table>
+    <tbody>
+    <tr>
+        <td>
+        <i class="fas fa-home"></i> Project Overview <br>
+        <i class="far fa-file-alt"></i> Repository <br>
+        <i class="fas fa-laptop"></i> Registry <br>
+        <i class="far fa-sticky-note"></i> Issues
+        </td>
+        <td>
+        <i class="fas fa-code-branch"></i> Merge Requests <br>
+        <i class="fas fa-tachometer-alt"></i> CI / CD <br>
+        <i class="fas fa-bookmark"></i> Wiki <br>
+        <i class="fas fa-cut"></i> Snippets <br>
+        <i class="fas fa-cog"></i> Settings
+        </td>
+    </tr>
+    </tbody>
+</table>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 62.5px; display: none;" hidden="" aria-hidden="true"><h2 id="repository-details">Repository Details</h2>
+<ul>
+<li>Files</li>
+<li>Commits</li>
+<li>Branches</li>
+<li>Tags</li>
+<li>Contributors</li>
+<li>Graph</li>
+<li>Compare</li>
+<li>Charts</li>
+</ul>
+<aside class="notes"><ul>
+<li>Files - shows master branch, but dropdown has links to other branches</li>
+<li>Commits - changes made to the files</li>
+<li>Branches - different variations of the master  branch</li>
+<li>Tags - “custom” locations of the repo (ie, release points) - git concept</li>
+</ul>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 114.5px; display: none;" hidden="" aria-hidden="true"><h2 id="issues-details">Issues Details</h2>
+<ul>
+<li>Each project has its own issue board</li>
+<li>Issues are bugs / enhancements / regressions / etc.</li>
+<li>Kanban style boards</li>
+<li>Labels</li>
+<li>Milestones<ul>
+<li>Burndown charts by issue or weight</li>
+</ul>
+</li>
+</ul>
+<aside class="notes"><ul>
+<li>Create a new issue</li>
+<li>Show markdown support</li>
+<li>Slash command like /assign. Type “/” to see what’s supported.</li>
+<li>Multiple assignees</li>
+<li>@mentions;  #issue; links;</li>
+</ul>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 36.5px; display: none;" hidden="" aria-hidden="true"><h2 id="merge-requests-details">Merge Requests Details</h2>
+<ul>
+<li>Equivalent of a 'pull request' <ul>
+<li>GitLab calls a merge a merge!</li>
+</ul>
+</li>
+<li>To obtain feedback, create a merge request<ul>
+<li>Conversational Development</li>
+</ul>
+</li>
+<li>Assign or mention the person you would like to review<ul>
+<li>Anyone can comment, not just the assignee</li>
+<li>Add <strong>‘WIP:’</strong> to the title if still a work in progress</li>
+</ul>
+</li>
+<li>Push corrections to the same branch</li>
+</ul>
+<aside class="notes"><ul>
+<li>Show markdown in MR comments</li>
+<li>Slash commands with “/”.</li>
+<li>Show how it closes issues - patterns in - <a href="https://docs.gitlab.com/ee/administration/issue_closing_pattern.html#issue-closing-pattern">https://docs.gitlab.com/ee/administration/issue_closing_pattern.html#issue-closing-pattern</a></li>
+<li>Show discussion, commits, pipelines &amp; diffs</li>
+<li>!merge request links</li>
+</ul>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 77.5px; display: none;" hidden="" aria-hidden="true"><h2 id="pipelines">Pipelines</h2>
+<p>Best-of-breed CI/CD...built in!</p>
+<ul>
+<li>GitLab’s built-in CI/CD tool</li>
+<li>Controlled by <code>.gitlab-ci.yml</code><ul>
+<li>Or AutoDevOps!</li>
+</ul>
+</li>
+<li>Pipelines are run on commits (both on branches and master)</li>
+<li>An entire workshop to itself</li>
+</ul>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 11px; display: none;" hidden="" aria-hidden="true"><h2 id="-and-the-rest-">"And the rest"</h2>
+<ul>
+<li>Wiki<ul>
+<li>General purpose wiki used for anything</li>
+</ul>
+</li>
+<li>Snippets<ul>
+<li>Share code with others quickly</li>
+</ul>
+</li>
+<li>Settings<ul>
+<li>General</li>
+<li>Members</li>
+<li>Integrations</li>
+<li>Repository</li>
+<li>Pipelines</li>
+</ul>
+</li>
+</ul>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 14.5px; display: none;" hidden="" aria-hidden="true"><h2 id="enough-talk-let-s-go-">Enough talk - Let's go!</h2>
+<p><img src="./GitLab Slides_files/gitlabfan-smile.png" class="plain" height="450"></p>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 14.5px; display: none;" hidden="" aria-hidden="true"><h3 id="team-up-">Team up!</h3>
+<p>Assignments:</p>
+<ul>
+<li>Create a GitLab Group and give access to group members</li>
+<li>Create new project</li>
+<li>Add a README.md</li>
+<li>Create and assign issues</li>
+<li>Assign labels, milestone, weight</li>
+<li>Set up issue board</li>
+<li>Propose changes to the README (MR)</li>
+<li>Approve and merge</li>
+</ul>
+</section><section data-background-image="img/icon-pattern-background-purple.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 54.5px; display: none;" hidden="" aria-hidden="true"><!-- -->
+<p><img class="plain" height="400" src="./GitLab Slides_files/stacked_wm_no_bg.png" data-lazy-loaded=""></p>
+<p>Questions? </p>
+</section>
+				<section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 54px; display: none;" hidden="" aria-hidden="true"><h2 id="gitlab">GitLab</h2>
+<p>Everyone Can Contribute</p>
+<p><img height="300" class="plain" src="./GitLab Slides_files/logo-square.png" data-lazy-loaded=""></p>
+<aside class="notes"><p>Here's my speaker note</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 143px; display: none;" hidden="" aria-hidden="true"><p><img height="200" class="plain" src="./GitLab Slides_files/logo-square.png" data-lazy-loaded=""></p>
+<h3>
+    Learning GitLab with Git Basics
+</h3>
+
+<aside class="notes"><p>Foo</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 0px; display: none;" hidden="" aria-hidden="true"><h2 id="prep-for-part-2">Prep for Part 2</h2>
+<p>AKA Homework </p>
+<ul>
+<li><p>Windows: Install “Git For Windows”</p>
+<ul>
+<li><a href="https://git-for-windows.github.io/">https://git-for-windows.github.io</a></li>
+</ul>
+</li>
+<li><p>MacOS: Type git in a Terminal window</p>
+<ul>
+<li>If not installed, should be prompted to install it</li>
+</ul>
+</li>
+<li><p>Linux</p>
+<ul>
+<li>Debian: <code>sudo apt-get install git-all</code></li>
+<li>Red Hat: <code>sudo yum install git-all</code></li>
+</ul>
+</li>
+</ul>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 143px; display: none;" hidden="" aria-hidden="true"><p><img height="200" class="plain" src="./GitLab Slides_files/logo-square.png" data-lazy-loaded=""></p>
+<h3>
+    Part 2 - Git Basics
+</h3>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 113.5px; display: none;" hidden="" aria-hidden="true"><h2 id="agenda">Agenda</h2>
+<ul>
+<li>Git CLI setup</li>
+<li class="fragment visible" data-fragment-index="0">Basic commands <!-- --></li>
+<li class="fragment visible" data-fragment-index="1">Workflow <!-- --></li>
+<li class="fragment visible" data-fragment-index="2">Merging &amp; Rebasing <!-- --></li>
+<li class="fragment visible" data-fragment-index="3">Reverting &amp; Reseting <!-- --></li>
+</ul>
+</section><section data-background-image="img/photo-background-working-4.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="blacktext-slide past" style="top: 25.5px; display: none;" hidden="" aria-hidden="true"><!-- -->
+<!-- -->
+<h2 id="git-cli-setup">Git CLI setup</h2>
+<ul>
+<li><p>Windows: Install “Git For Windows”</p>
+<ul>
+<li><a href="https://git-for-windows.github.io/">https://git-for-windows.github.io</a></li>
+</ul>
+</li>
+<li><p>MacOS: Type git in a Terminal window</p>
+<ul>
+<li>If not installed, should be prompted to install it</li>
+</ul>
+</li>
+<li><p>Linux</p>
+<ul>
+<li>Debian: <code>sudo apt-get install git-all</code></li>
+<li>Red Hat: <code>sudo yum install git-all</code></li>
+</ul>
+</li>
+</ul>
+</section><section data-background-image="img/photo-background-working-4.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="blacktext-slide past" style="top: 94.5px; display: none;" hidden="" aria-hidden="true"><!-- -->
+<!-- -->
+<h2 id="hands-on-with-gitlab">Hands on with GitLab</h2>
+<p>Training Server:</p>
+<p><a href="https://demo.tanuki.cloud/">https://demo.tanuki.cloud</a></p>
+<p>Logins:</p>
+<pre><code class="markdown hljs">
+<span class="hljs-bullet">- </span>Name(s):   <span class="hljs-code">`user2`</span> .. <span class="hljs-code">`user50`</span>
+<span class="hljs-bullet">- </span>Password:  <span class="hljs-code">`G1tlab23`</span>
+
+</code></pre>
+</section><section data-background-image="img/photo-background-working-4.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="blacktext-slide past" style="top: 0px; display: none;" hidden="" aria-hidden="true"><!-- -->
+<!-- -->
+<h2 id="ssh-key-creation">SSH Key Creation</h2>
+<p><small>
+Documented here: <a href="http://doc.gitlab.com/ce/ssh/README.html">http://doc.gitlab.com/ce/ssh/README.html</a>
+</small></p>
+<pre><code class="bash hljs">ssh-keygen -t rsa -C <span class="hljs-string">"your.email@example.com"</span> -b 4096
+</code></pre>
+
+<p>Copy to clipboard</p>
+<p>MacOS: </p>
+<pre><code class="bash hljs">pbcopy &lt; ~/.ssh/id_rsa.pub</code></pre>
+Linux (requires xclip):
+<pre><code class="bash hljs">xclip -sel clip &lt; ~/.ssh/id_rsa.pub</code></pre>
+Windows:
+<pre><code class="bash hljs"><span class="hljs-built_in">type</span> %userprofile%\.ssh\id_rsa.pub | clip</code></pre>
+</section><section data-background-image="img/photo-background-working-4.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="blacktext-slide past" style="top: 120.5px; display: none;" hidden="" aria-hidden="true"><!-- -->
+<!-- -->
+<h2 id="ssh-key-setup">SSH Key Setup</h2>
+<p>In GitLab, navigate to:</p>
+<h4 id="profile-settings-ssh-keys">Profile Settings → SSH Keys</h4>
+<ul>
+<li>Paste key</li>
+<li>Use a meaningful title</li>
+<li><code>Add key</code></li>
+</ul>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 0px; display: block;" hidden="" aria-hidden="true"><h4 id="key-git-terms">Key Git terms</h4>
+<table>
+    <tbody><tr class="fragment fade-left visible" data-fragment-index="0">
+        <td class="gitlab-orange-text">
+            Local Repo
+        </td>
+        <td>
+            Local copy of the upstream repo
+        </td>
+    </tr>
+    <tr class="fragment fade-left visible" data-fragment-index="1">
+        <td class="gitlab-orange-text">
+            Remote <br>
+            <small>(Upstream repo)</small>
+        </td>
+        <td>
+            Hosted repository on a shared server <small>(GitLab)</small>
+        </td>
+    </tr>
+    <tr class="fragment fade-left visible" data-fragment-index="2">
+        <td class="gitlab-orange-text">
+            Untracked files
+        </td>
+        <td>
+            New files that Git has not been told to track previously
+        </td>
+    </tr>
+    <tr class="fragment fade-left visible" data-fragment-index="3">
+        <td class="gitlab-orange-text">
+            Working area
+        </td>
+        <td>
+            Files that have been modified but not committed
+        </td>
+    </tr>
+    <tr class="fragment fade-left visible" data-fragment-index="4">
+        <td class="gitlab-orange-text">
+            Staging area 
+        </td>
+        <td>
+            Modified/Added files that are marked to go into the next commit
+        </td>
+    </tr>
+</tbody></table>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="past" style="top: 22.5px; display: block;" hidden="" aria-hidden="true"><h4 id="key-git-terms-con-t-">Key Git terms (con't)</h4>
+<table>
+    <tbody><tr class="fragment fade-left visible" data-fragment-index="0">
+        <td class="gitlab-orange-text">
+            Branch
+        </td>
+        <td>
+            Independent line of development 
+            <small>(typically scoped to a feature or bug fix)</small>
+        </td>
+    </tr>
+    <tr class="fragment fade-left visible" data-fragment-index="1">
+        <td class="gitlab-orange-text">
+            Master Branch <br>
+            <small>(trunk)</small>
+        </td>
+        <td>
+            The canonical branch for the repository
+        </td>
+    </tr>
+    <tr class="fragment fade-left visible" data-fragment-index="2">
+        <td class="gitlab-orange-text">
+            Fork
+        </td>
+        <td>
+            A person copy of the ENTIRE repository
+        </td>
+    </tr>
+    <tr class="fragment fade-left visible" data-fragment-index="3">
+        <td class="gitlab-orange-text">
+            Merge
+        </td>
+        <td>
+            Bring two branches together 
+            <br><img src="./GitLab Slides_files/gitlabfan-celebrate.png" class="plain" height="75" align="middle">
+        </td>
+    </tr>
+</tbody></table>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="present" style="top: 24px; display: block;"><h3>
+    Local Repo consists of three <span class="gitlab-red-text">trees</span>.
+</h3> 
+
+<p>A <span class="gitlab-orange-text">Working Directory</span> 
+with the actual files, </p>
+<p>the <span class="gitlab-orange-text">Staging Area</span> and </p>
+<p>the last commit you made 
+which is called <span class="gitlab-orange-text">HEAD</span></p>
+<p><img src="./GitLab Slides_files/basic-diagram.png" alt="Flow diagram"></p>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" class="future" style="top: 14px; display: block;" hidden="" aria-hidden="true"><h2 class="gitlab-yellow-text">
+    Let's put it all together!
+</h2>
+
+<p><img src="./GitLab Slides_files/gitlabfan-happy.png" class="plain" height="450"></p>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 0px; display: block;"><h4 id="basic-git-workflow">Basic Git Workflow</h4>
+<p><img src="./GitLab Slides_files/git-workflow.png" alt="workflow diagram"></p>
+<aside class="notes"><p>Checkout The Project = ‘git checkout -b <branchname>’ to create a working branch
+‘git pull’ = ‘git fetch’ + ‘git merge’</branchname></p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 9.5px; display: none;"><h3 id="but-how-">But, how?</h3>
+<p><img src="./GitLab Slides_files/xkcd1.png" alt="XKCD Git"></p>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><h2 id="git-internals">Git Internals</h2>
+<p>Object Types</p>
+<ul>
+<li>Commit - Author, message, pointer to a tree of changes</li>
+<li>Tree - Pointer(s) to file names, content, other trees</li>
+<li>Blob - Data (source code, pictures, videos, etc.)</li>
+</ul>
+<p><img src="./GitLab Slides_files/git-icon.png" class="plain img-top-right" width="150"></p>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><h3 id="git-internals-con-t-">Git Internals (con't)</h3>
+<ul>
+<li>Stored as objects on the filesystem</li>
+<li>Tags and Branches<ul>
+<li>Pointers to commits (lightweight)</li>
+<li>Not full copies</li>
+<li>Allows a name for a commit<ul>
+<li>Contains additional meta information</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="./GitLab Slides_files/git-icon.png" class="plain img-top-right" width="150"></p>
+<aside class="notes"><p>BLOB - BInary Large OBject
+Git compresses this
+Its Git’s way of storing file content (like a gzip)</p>
+<p>Tag - can refer to a release, have release notes, etc.</p>
+<p>This will setup context for the next slide doing a brief demo of how git works</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><h2 id="git-is-a">Git is a</h2>
+<h2 id="-database-of-references-">"Database of References"</h2>
+<h3 id="aka-git-is-one-giant-graph-">AKA: Git is one giant graph!</h3>
+<p><small>(directed acyclic graph, to be specific )</small></p>
+<aside class="notes"><p>By understanding the git data model, the overlying concepts should become more clear and less mystical.</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><ul>
+<li>Commits all reference their parent</li>
+<li>Branches are named pointers to commits</li>
+<li>‘master’ is the canonical mainline branch</li>
+<li>HEAD is a special pointer to the latest commit<ul>
+<li>Moves automatically (for current, active branch)</li>
+</ul>
+</li>
+</ul>
+<p>Performing a clone/checkout starts at the current commit and works up the parent chain, fetching tree+blob content!</p>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><p><img src="./GitLab Slides_files/gitgraph.png" alt="Git Graph"></p>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><h3 id="git-configuration">Git Configuration</h3>
+<ul>
+<li><p>One-time configuration of the Git client</p>
+<pre><code class="hljs lua">git <span class="hljs-built_in">config</span> <span class="hljs-comment">--global user.name ”Your Name”</span>
+git <span class="hljs-built_in">config</span> <span class="hljs-comment">--global user.email ”you@example.com”</span>
+</code></pre></li>
+<li><p>Without --global flag setup a different user for each project/repo</p>
+</li>
+<li>Create a different directory for each project / repo</li>
+<li>Check settings with...<pre><code class="hljs tcl">git config --<span class="hljs-keyword">global</span> --<span class="hljs-keyword">list</span>
+</code></pre>You will likely be required to use an SSH key
+<a href="http://doc.gitlab.com/ce/ssh/README.html">http://doc.gitlab.com/ce/ssh/README.html</a></li>
+</ul>
+<aside class="notes"><ul>
+<li>Make sure that they use “user#@gitlab.rocks” as their email address</li>
+<li><a href="http://doc.gitlab.com/ce/ssh/README.html">http://doc.gitlab.com/ce/ssh/README.html</a></li>
+<li>Doesn’t matter which directory user is in if global flags are being used!</li>
+</ul>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><h3 id="git-workspace">Git Workspace</h3>
+<ul>
+<li>Choose a directory on your machine that is easy to access</li>
+<li>Create a workspace or development directory</li>
+<li>This is where you’ll work from to add/change repository content</li>
+</ul>
+<pre><code class="hljs jboss-cli">mkdir ~<span class="hljs-string">/development</span>
+<span class="hljs-keyword">cd</span> ~<span class="hljs-string">/development</span>
+</code></pre><p>or</p>
+<pre><code class="hljs jboss-cli">mkdir ~<span class="hljs-string">/workspace</span>
+<span class="hljs-keyword">cd</span> ~<span class="hljs-string">/workspace</span>
+</code></pre><aside class="notes"><p>Git commands should be run from this directory
+Git repos &amp; files will be created as subfolders of this directory</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><h3 id="git-gitlab-workshop">Git &amp; GitLab Workshop</h3>
+<ul>
+<li>Use the project we created in Part 1</li>
+<li>Copy the project URL to the clipboard</li>
+<li>On your local machine, from the command line, clone the project:<pre><code class="hljs crmsh">git <span class="hljs-keyword">clone</span> <span class="hljs-title">&lt;project</span> URL&gt;
+</code></pre></li>
+</ul>
+<aside class="notes"><p><a href="https://gitlab.com/gitlab-org/training-examples.git">https://gitlab.com/gitlab-org/training-examples.git</a>
+You might have an existing project from Part 1, if so, use it
+In GL copy the project URL to clipboard and clone that</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><h3 id="git-gitlab-workshop">Git &amp; GitLab Workshop</h3>
+<ul>
+<li>To update your local repository after cloning, use <code>git pull</code> or <code>git fetch</code><ul>
+<li>Fetch will update without affecting your local changes</li>
+<li>Pull will update &amp; merge changes with your local files</li>
+</ul>
+</li>
+</ul>
+<!-- TODO: use a training example project -->
+<aside class="notes"><p><a href="https://gitlab.com/gitlab-org/training-examples.git">https://gitlab.com/gitlab-org/training-examples.git</a>
+You might have an existing project from Part 1, if so, use it
+In GL copy the project URL to clipboard and clone that</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><h3 id="git-gitlab-workshop">Git &amp; GitLab Workshop</h3>
+<ul>
+<li>Run <code>git status</code></li>
+<li>Create a new branch (<code>git checkout -b &lt;your_new_branch&gt;</code>)</li>
+<li>Run <code>git status</code></li>
+<li>Edit the file you created in Part 1 (or create a new file)<ul>
+<li>Use your favourite editor</li>
+</ul>
+</li>
+<li>See it listed as a changed file (git status)</li>
+<li>View the differences (git diff)  (no differences if a new file)<ul>
+<li>If the file is staged then git diff --staged</li>
+</ul>
+</li>
+</ul>
+<aside class="notes"><p>Git status shows branch info!</p>
+<p>Git checkout -b creates branch and switches to it
+Git checkout <branchname> uses an existing branch
+Git checkout a / git checkout b -- switches between them
+Switching doesn’t pull changes -- ‘git pull ‘ should be used</branchname></p>
+<p>Use your favourite editor (vi / vim / EMACS / etc.)
+“git diff” only works before you “git add”
+Use “git diff --staged” to see changes in staging area</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><h3 id="git-gitlab-workshop">Git &amp; GitLab Workshop</h3>
+<ul>
+<li>Stage the file (<code>git add &lt;file&gt;</code>)</li>
+<li>Run <code>git status</code></li>
+<li>Commit the file (<code>git commit -m ”commit message”</code>)</li>
+<li>Run <code>git status</code></li>
+<li>Push the commit to the remote (<code>git push origin &lt;your_new_branch&gt;</code>)</li>
+<li>Run <code>git status</code></li>
+<li>View the git log (<code>git log</code>)</li>
+</ul>
+<aside class="notes"><p>Git add -- even when changing existing files!
+Add can be added to commit:
+    git commit -am ‘commit message’
+“-a” does the ‘add’ and ‘commit’ in one step
+“-m” specifies a message on the command line vs. opening an editor</p>
+<p>URL for the branch in GitLab should be displayed after pushing to the branch</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><h3 id="gitlab-merge-request">GitLab Merge Request</h3>
+<ul>
+<li>Create a Merge Request in GitLab<ul>
+<li>Go to Branches and press Merge Request</li>
+</ul>
+</li>
+<li>View the Diff and leave a comment</li>
+<li>Push a new commit to the same branch</li>
+<li>Review the changes again and notice the update</li>
+</ul>
+<aside class="notes"><p>Branch now exists in gitlab - can create a MR from it!</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><h3 id="merge-conflicts">Merge Conflicts</h3>
+<ul>
+<li>Conflicts happen frequently - if you don’t merge often enough</li>
+<li>Try to stay up-to-date with master</li>
+<li>Learning to fix merge conflicts can be difficult</li>
+<li>Be careful about force pushing after fixing conflicts</li>
+</ul>
+<p>Rebasing vs. Merging</p>
+<ul>
+<li>Rebase when updating your branch from master</li>
+<li>Merge when bringing changes from feature branch into master</li>
+</ul>
+<aside class="notes"><p>Merge example at end if people are interested</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><h3 id="revert-unstage">Revert &amp; Unstage</h3>
+<ul>
+<li>To remove files from staging, use git reset<pre><code class="hljs sql">git <span class="hljs-keyword">reset</span> <span class="hljs-keyword">HEAD</span> &lt;<span class="hljs-keyword">file</span>&gt;
+</code></pre></li>
+<li>This will unstage the file but maintain the modifications.
+<small>To revert the file back to the state it was in before the changes (after ‘git reset’)</small><pre><code class="hljs ada">git checkout <span class="hljs-comment">-- &lt;file&gt;</span>
+</code></pre></li>
+</ul>
+<aside class="notes"><p>Remember that staging is letting git know you want to commit the file.
+HEAD -- the last commit you pulled -- non-destructive
+Checkout --  DESTRUCTIVE
+Using --cache to keep the file in case you want to add it to .gitignore
+Files are removed with ‘git reset’  - any file(s) that are staged via ‘git add’
+  “HEAD .” -- all</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><ul>
+<li>To remove a file from disk and the repo use <code>git rm</code></li>
+</ul>
+<pre><code class="hljs stata">git <span class="hljs-keyword">rm</span> &lt;<span class="hljs-keyword">file</span>&gt;
+git <span class="hljs-keyword">rm</span> -r &lt;dirname&gt;   (recursive -- <span class="hljs-keyword">for</span> directories)
+</code></pre><ul>
+<li>To remove a file from the repo, but keep it on disk</li>
+</ul>
+<pre><code class="lang-bash hljs">git rm &lt;file&gt; --cache
+</code></pre>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><h3 id="undo-commits">Undo Commits</h3>
+<ul>
+<li>Add files and change commit message<pre><code class="hljs sql">git <span class="hljs-keyword">commit</span> <span class="hljs-comment">--amend -m ”New message”</span>
+</code></pre></li>
+<li>Undo the last commit and put everything back into staging<pre><code class="hljs sql">git <span class="hljs-keyword">reset</span> <span class="hljs-comment">--soft HEAD^</span>
+</code></pre></li>
+<li>Undo the last commit and remove changes<pre><code class="hljs sql">git <span class="hljs-keyword">reset</span> <span class="hljs-comment">--hard HEAD^</span>
+</code></pre></li>
+<li>Same as last, but going two commits back<pre><code class="hljs sql">git <span class="hljs-keyword">reset</span> <span class="hljs-comment">--hard HEAD^^</span>
+</code></pre></li>
+</ul>
+<aside class="notes"><p>Resetting after pushing can cause downstream issues
+In case of Geo replication
+In case another user pulls your changes before you reset
+Etc.
+ZZZ what exactly are these ‘issues’?
+Geo gets out of sync because you’ve now reset the branch after Geo has replicated everything
+Other users get out of sync because they’ve pulled or cloned between your push and your reset
+Essentially causes lots of potential conflicts that will need to be resolved</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><h3 id="cleaning-up-local-branches">Cleaning Up Local Branches</h3>
+<pre><code class="hljs mipsasm">git remote <span class="hljs-keyword">show </span><span class="hljs-keyword">origin
+</span></code></pre><p><small>Shows which branches may be “stale” (merged into master)</small></p>
+<pre><code class="hljs nginx"><span class="hljs-attribute">git</span> remote prune origin
+</code></pre><p><small>Cleans up the “stale” external references to those branches</small></p>
+<pre><code class="hljs stylus">git branch -<span class="hljs-selector-tag">a</span>
+</code></pre><p><small>Shows all branches</small></p>
+<pre><code class="hljs mipsasm">git <span class="hljs-keyword">branch </span>-d <span class="hljs-keyword">branchname
+</span></code></pre><p><small>To delete local branches that have been pushed to GitLab and then merged into master</small></p>
+<aside class="notes"><p>Just be careful to only delete those branches that were stale and pruned.</p>
+</aside></section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><h3 id="help-resources-for-git">Help &amp; Resources for Git</h3>
+<p>Git Reference manual</p>
+<p><a href="https://git-scm.com/docs">https://git-scm.com/docs</a></p>
+<p>GitPro Online book</p>
+<p><a href="https://git-scm.com/book">https://git-scm.com/book</a></p>
+<p>GitLab Resources</p>
+<p><a href="https://about.gitlab.com/resources/">https://about.gitlab.com/resources/</a></p>
+<p>GitLab Documenation</p>
+<p><a href="https://docs.gitlab.com/">https://docs.gitlab.com/</a></p>
+</section><section data-background-image="img/icon-pattern-background-purple.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"><!-- -->
+<p><img data-src="img/stacked_wm_no_bg.png" class="plain" height="400"></p>
+<p>Questions? </p>
+</section><section data-background-image="img/team-grid-backgroud-dark.png" data-background-size="cover" data-markdown="" data-markdown-parsed="true" hidden="" aria-hidden="true" class="future" style="top: 350px; display: none;"></section>
+            </div>
+		<div class="backgrounds"><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" data-loaded="true" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" data-loaded="true" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" data-loaded="true" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/icon-pattern-background-purple.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/icon-pattern-background-purple.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/icon-pattern-background-purple.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/icon-pattern-background-purple.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background blacktext-slide past" data-background-hash="nullcoverimg/photo-background-working-4.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/photo-background-working-4.png&quot;);" data-loaded="true"></div><div class="slide-background blacktext-slide past" data-background-hash="nullcoverimg/photo-background-working-4.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/photo-background-working-4.png&quot;);" data-loaded="true"></div><div class="slide-background blacktext-slide past" data-background-hash="nullcoverimg/photo-background-working-4.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/photo-background-working-4.png&quot;);" data-loaded="true"></div><div class="slide-background blacktext-slide past" data-background-hash="nullcoverimg/photo-background-working-4.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/photo-background-working-4.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: block; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background past" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: block; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background present" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: block; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: block; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: block; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none; background-image: url(&quot;img/team-grid-backgroud-dark.png&quot;);" data-loaded="true"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none;"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none;"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none;"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none;"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none;"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none;"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none;"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none;"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none;"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none;"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none;"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none;"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none;"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none;"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none;"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none;"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none;"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none;"></div><div class="slide-background future" data-background-hash="nullcoverimg/icon-pattern-background-purple.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none;"></div><div class="slide-background future" data-background-hash="nullcoverimg/team-grid-backgroud-dark.pngnullnullnullnullnullnull" data-background-size="cover" style="background-size: cover; display: none;"></div></div><div class="progress" style="display: block;"><span style="width: 713.952px;"></span></div><aside class="controls" data-controls-layout="bottom-right" data-controls-back-arrows="faded" style="display: block;"><button class="navigate-left enabled" aria-label="previous slide"><div class="controls-arrow"></div></button><button class="navigate-right enabled" aria-label="next slide"><div class="controls-arrow"></div></button><button class="navigate-up" aria-label="above slide" disabled="disabled"><div class="controls-arrow"></div></button><button class="navigate-down" aria-label="below slide" disabled="disabled"><div class="controls-arrow"></div></button></aside><div class="slide-number" style="display: block;"><span class="slide-number-a">40</span><span class="slide-number-delimiter">/</span><span class="slide-number-b">63</span></div><div class="speaker-notes" data-prevent-swipe="" tabindex="0"></div><div class="pause-overlay"></div><div id="aria-status-div" aria-live="polite" aria-atomic="true" style="position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px);">
+    Local Repo consists of three trees.
+ 
+
+A Working Directory 
+with the actual files, 
+the Staging Area and 
+the last commit you made 
+which is called HEAD
+
+</div></div>
+
+		<script src="./GitLab Slides_files/head.min.js.download"></script>
+		<script src="./GitLab Slides_files/reveal.js.download"></script>
+		<script src="./GitLab Slides_files/highlight.js.download"></script>
+
+		<script>hljs.initHighlightingOnLoad();</script>
+
+		<script>
+
+			Reveal.initialize({
+				controls: true,
+                controlsTutorial: false,
+                slideNumber: 'c/t',
+                transition: 'fade', // none/fade/slide/convex/concave/zoom
+				progress: true,
+				history: true,
+				center: true,
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/notes/notes.js' },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+				]
+			});
+
+		</script>
+
+	
+</body></html>
